@@ -121,6 +121,7 @@ namespace SuperNewRoles.Roles
             EvilSeer.ClearAndReload();
             RemoteSheriff.ClearAndReload();
             TeleportingJackal.ClearAndReload();
+            DoubleKiller.ClearAndReload();
             //ロールクリア
             Quarreled.ClearAndReload();
             Lovers.ClearAndReload();
@@ -1718,6 +1719,15 @@ namespace SuperNewRoles.Roles
                 IsImpostorLight = CustomOptions.TeleportingJackalIsImpostorLight.getBool();
                 CoolTime = CustomOptions.TeleportingJackalCoolTime.getFloat();
                 DurationTime = CustomOptions.TeleportingJackalDurationTime.getFloat();
+            }
+        }
+        public static class DoubleKiller
+        {
+            public static List<PlayerControl> DoubleKillerPlayer;
+            public static Color32 color = ImpostorRed;
+            public static void ClearAndReload()
+            {
+                DoubleKillerPlayer = new List<PlayerControl>();
             }
         }
         //新ロールクラス
