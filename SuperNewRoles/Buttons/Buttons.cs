@@ -43,6 +43,7 @@ namespace SuperNewRoles.Buttons
         public static CustomButton ImpostorSidekickButton;
         public static CustomButton SideKillerSidekickButton;
         public static CustomButton FalseChargesFalseChargeButton;
+        public static CustomButton DoubleKillerSecondKillButton;
 
         public static TMPro.TMP_Text sheriffNumShotsText;
 
@@ -813,6 +814,32 @@ namespace SuperNewRoles.Buttons
 
             SideKillerSidekickButton.buttonText = ModTranslation.getString("SidekickName");
             SideKillerSidekickButton.showButtonText = true;
+
+            DoubleKillerSecondKillButton = new CustomButton(
+                () =>
+                {
+                    if (DoubleKiller.DoubleKillerFixedPatch.DoubleKillersetTarget() && RoleHelpers.isAlive(PlayerControl.LocalPlayer) && PlayerControl.LocalPlayer.CanMove)
+                    {
+                        ModHelpers.checkMuderAttemptAndKill(PlayerControl.LocalPlayer, DoubleKiller.DoubleKillerFixedPatch.DoubleKillersetTarget());
+                        DoubleKiller.ResetSecondCoolDown();
+                    }
+                },
+                () => { return ModeHandler.isMode(ModeId.Default) && RoleHelpers.isAlive(PlayerControl.LocalPlayer) && RoleClass.Jackal.JackalPlayer.IsCheckListPlayerControl(PlayerControl.LocalPlayer) || RoleHelpers.isAlive(PlayerControl.LocalPlayer) && RoleClass.TeleportingJackal.TeleportingJackalPlayer.IsCheckListPlayerControl(PlayerControl.LocalPlayer); },
+                () =>
+                {
+                    return DoubleKiller.DoubleKillerFixedPatch.DoubleKillersetTarget() && PlayerControl.LocalPlayer.CanMove;
+                },
+                () => { DoubleKiller.EndMeeting(); },
+                __instance.KillButton.graphic.sprite,
+                new Vector3(-1.8f, -0.06f, 0),
+                __instance,
+                __instance.KillButton,
+                KeyCode.F,
+                49
+            );
+
+            DoubleKillerSecondKillButton.buttonText = HudManager.Instance.KillButton.buttonLabelText.text;
+            DoubleKillerSecondKillButton.showButtonText = true;
 
             RoleClass.SerialKiller.SuicideKillText = GameObject.Instantiate(HudManager.Instance.KillButton.cooldownTimerText, HudManager.Instance.KillButton.cooldownTimerText.transform.parent);
             RoleClass.SerialKiller.SuicideKillText.text = "";
