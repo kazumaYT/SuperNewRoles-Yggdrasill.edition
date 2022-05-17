@@ -575,3 +575,6 @@ Let's do a Remote Sheriff kill!
 Kill Teleport
 TeleportingJackal
 Teleport and kill all crewmates and impostors!
+DoubleKiller
+Let's make brains into muscles.
+Additional kill cool time

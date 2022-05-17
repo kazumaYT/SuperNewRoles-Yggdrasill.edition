@@ -575,3 +575,6 @@ RemoteSheriffTitle1
 RemoteSheriffIsKillTeleportSetting
 TeleportingJackalName
 TeleportingJackalTitle1
+DoubleKillerName
+DoubleKillerTitle1
+DoubleKillerSecondKillTimeSetting

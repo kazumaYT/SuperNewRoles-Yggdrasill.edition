@@ -2308,5 +2308,17 @@
         "0" : "Teleport and kill all crewmates and impostors!" ,
         "11" : "\u30c6\u30ec\u30dd\u30fc\u30c8\u3057\u3066\u5168\u54e1\u3076\u3061\u6bba\u305d\u3046"
         } ,
+ "DoubleKillerName" : {
+        "0" : "DoubleKiller" ,
+        "11" : "\u30c0\u30d6\u30eb\u30ad\u30e9\u30fc"
+        } ,
+ "DoubleKillerTitle1" : {
+        "0" : "Let's make brains into muscles." ,
+        "11" : "\u8133\u307f\u305d\u3092\u7b4b\u8089\u306b\u3057\u3088\u3046"
+        } ,
+ "DoubleKillerSecondKillTimeSetting" : {
+        "0" : "Additional kill cool time" ,
+        "11" : "\u8ffd\u52a0\u306e\u30ad\u30eb\u30af\u30fc\u30eb\u30bf\u30a4\u30e0"
+        } 
 
 }
