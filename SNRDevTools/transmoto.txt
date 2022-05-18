@@ -578,3 +578,5 @@ TeleportingJackalTitle1
 DoubleKillerName
 DoubleKillerTitle1
 DoubleKillerSecondKillTimeSetting
+MadMakerName
+MadMakerTitle1
