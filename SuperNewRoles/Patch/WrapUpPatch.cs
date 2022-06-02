@@ -79,6 +79,7 @@ namespace SuperNewRoles.Patch
         public static void Postfix(GameData.PlayerInfo exiled)
         {
             SerialKiller.WrapUp();
+            DoubralKiller.WrapUp();
             CountChanger.CountChangerPatch.WrapUpPatch();
             CustomButton.MeetingEndedUpdate();
 

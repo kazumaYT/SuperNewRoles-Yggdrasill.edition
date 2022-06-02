@@ -133,6 +133,7 @@ namespace SuperNewRoles.Roles
             TaskManager.ClearAndReload();
             SeerFriends.ClearAndReload();
             JackalSeer.ClearAndReload();
+            DoubralKiller.ClearAndReload();
             //ロールクリア
             Quarreled.ClearAndReload();
             Lovers.ClearAndReload();
@@ -1910,6 +1911,45 @@ namespace SuperNewRoles.Roles
                 NewJackalCreateSidekick = CustomOptions.JackalSeerNewJackalCreateSidekick.getBool();
             }
 
+        }
+        public static class DoubralKiller
+        {
+            public static List<PlayerControl> DoubralKillerPlayer;
+            public static Color32 color = ImpostorRed;
+            public static float FirstSuicideDefaultTime;
+            public static float SecondSuicideDefaultTime;
+            public static float FirstSuicideTime;
+            public static float SecondSuicideTime;
+            public static Dictionary<byte, float> FirstSuicideTimers;
+            public static Dictionary<byte, float> SecondSuicideTimers;
+            public static bool FirstIsSuicideView;
+            public static bool SecondIsSuicideView;
+            public static Dictionary<byte, bool> FirstIsSuicideViews;
+            public static Dictionary<byte, bool> SecondIsSuicideViews;
+            public static bool IsMeetingReset;
+            public static float FirstKillTime;
+            public static float SecondKillTime;
+            public static DateTime ButtonTimer;
+            public static TextMeshPro FirstSuicideKillText = null;
+            public static TextMeshPro SecondSuicideKillText = null;
+            public static void ClearAndReload()
+            {
+                DoubralKillerPlayer = new List<PlayerControl>();
+                FirstSuicideDefaultTime = FirstSuicideTime;
+                SecondSuicideDefaultTime = SecondSuicideTime;
+                FirstSuicideTime = CustomOptions.DoubralKillerFirstSuicideTime.getFloat();
+                SecondSuicideTime = CustomOptions.DoubralKillerSecondSuicideTime.getFloat();
+                FirstIsSuicideView = false;
+                SecondIsSuicideView = false;
+                FirstIsSuicideViews = new Dictionary<byte, bool>();
+                SecondIsSuicideViews = new Dictionary<byte, bool>();
+                FirstSuicideTimers = new Dictionary<byte, float>();
+                SecondSuicideTimers = new Dictionary<byte, float>();
+                ButtonTimer = DateTime.Now;
+                FirstKillTime = CustomOptions.DoubralKillerFirstKillTime.getFloat();
+                SecondKillTime = CustomOptions.DoubralKillerSecondKillTime.getFloat();
+                IsMeetingReset = CustomOptions.DoubralKillerIsMeetingReset.getBool();
+            }
         }
         //新ロールクラス
         public static class Quarreled

@@ -849,6 +849,8 @@ namespace SuperNewRoles
                     return CustomOption.CustomOptions.SeerFriendsPlayerCount.getFloat();
                 case (RoleId.JackalSeer):
                     return CustomOption.CustomOptions.JackalSeerPlayerCount.getFloat();
+                case (RoleId.DoubralKiller):
+                    return CustomOption.CustomOptions.DoubralKillerPlayerCount.getFloat();
                     //プレイヤーカウント
             }
             return 1;
@@ -2269,6 +2271,22 @@ namespace SuperNewRoles
                     for (int i = 1; i <= OptionDate; i++)
                     {
                         Neutnotonepar.Add(ThisRoleId);
+                    }
+                }
+            }
+        if (!(CustomOption.CustomOptions.DoubralKillerOption.getString().Replace("0%", "") == ""))
+            {
+                int OptionDate = int.Parse(CustomOption.CustomOptions.DoubralKillerOption.getString().Replace("0%", ""));
+                RoleId ThisRoleId = RoleId.DoubralKiller;
+                if (OptionDate == 10)
+                {
+                    Impoonepar.Add(ThisRoleId);
+                }
+                else
+                {
+                    for (int i = 1; i <= OptionDate; i++)
+                    {
+                        Imponotonepar.Add(ThisRoleId);
                     }
                 }
             }

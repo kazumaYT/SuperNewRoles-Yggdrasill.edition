@@ -607,6 +607,7 @@ namespace SuperNewRoles.Patches
             FinalStatusPatch.FinalStatusData.FinalStatuses[target.PlayerId] = FinalStatus.Kill;
 
             SerialKiller.MurderPlayer(__instance,target);
+            DoubralKiller.MurderPlayer(__instance,target);
             Seer.ExileControllerWrapUpPatch.MurderPlayerPatch.Postfix(__instance, target);
 
             if (ModeHandler.isMode(ModeId.SuperHostRoles))

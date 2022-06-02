@@ -47,6 +47,7 @@ namespace SuperNewRoles.Buttons
         public static CustomButton MadMakerSidekickButton;
         public static CustomButton DemonButton;
         public static CustomButton SpeederButton;
+        public static CustomButton DoubralKillerSecondKillButton;
 
         public static TMPro.TMP_Text sheriffNumShotsText;
 
@@ -960,6 +961,44 @@ namespace SuperNewRoles.Buttons
             SpeederButton.buttonText = ModTranslation.getString("SpeederButtonName");
             SpeederButton.showButtonText = true;
             SpeederButton.HasEffect = true;
+
+            DoubralKillerSecondKillButton = new CustomButton(
+                () =>
+                {
+                    if (DoubralKiller.DoubralKillerFixedPatch.DoubralKillersetTarget() && RoleHelpers.isAlive(PlayerControl.LocalPlayer) && PlayerControl.LocalPlayer.CanMove)
+                    {
+                        ModHelpers.checkMuderAttemptAndKill(PlayerControl.LocalPlayer, DoubralKiller.DoubralKillerFixedPatch.DoubralKillersetTarget());
+                        DoubralKiller.resetSecondCoolDown();
+                    }
+                },
+                () => { return RoleHelpers.isAlive(PlayerControl.LocalPlayer) && RoleClass.DoubralKiller.DoubralKillerPlayer.IsCheckListPlayerControl(PlayerControl.LocalPlayer); },
+                () =>
+                {
+                    return DoubralKiller.DoubralKillerFixedPatch.DoubralKillersetTarget() && PlayerControl.LocalPlayer.CanMove;
+                },
+                () => { DoubralKiller.EndMeeting(); },
+                __instance.KillButton.graphic.sprite,
+                new Vector3(-1.8f, -0.06f, 0),
+                __instance,
+                __instance.KillButton,
+                KeyCode.E,
+                49
+            );
+
+            DoubralKillerSecondKillButton.buttonText = ModTranslation.getString("DoubralKillerSuicideLText");
+            DoubralKillerSecondKillButton.buttonText = HudManager.Instance.KillButton.buttonLabelText.text;
+            DoubralKillerSecondKillButton.showButtonText = true;
+
+            RoleClass.DoubralKiller.FirstSuicideKillText = GameObject.Instantiate(HudManager.Instance.KillButton.cooldownTimerText, HudManager.Instance.KillButton.cooldownTimerText.transform.parent);
+            RoleClass.DoubralKiller.SecondSuicideKillText = GameObject.Instantiate(HudManager.Instance.KillButton.cooldownTimerText, HudManager.Instance.KillButton.cooldownTimerText.transform.parent);
+            RoleClass.DoubralKiller.FirstSuicideKillText.text = "";
+            RoleClass.DoubralKiller.SecondSuicideKillText.text = "";
+            RoleClass.DoubralKiller.FirstSuicideKillText.enableWordWrapping = false;
+            RoleClass.DoubralKiller.SecondSuicideKillText.enableWordWrapping = false;
+            RoleClass.DoubralKiller.FirstSuicideKillText.transform.localScale = Vector3.one * 0.5f;
+            RoleClass.DoubralKiller.SecondSuicideKillText.transform.localScale = Vector3.one * 0.5f;
+            RoleClass.DoubralKiller.FirstSuicideKillText.transform.localPosition += new Vector3(-1.8f, -0.06f, 0);
+            RoleClass.DoubralKiller.SecondSuicideKillText.transform.localPosition += new Vector3(0, 1, 0);
 
             setCustomButtonCooldowns();
         }

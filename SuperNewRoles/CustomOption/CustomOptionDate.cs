@@ -523,6 +523,15 @@ namespace SuperNewRoles.CustomOption
         public static CustomOption JackalSeerCreateSidekick;
         public static CustomOption JackalSeerNewJackalCreateSidekick;
 
+        public static CustomRoleOption DoubralKillerOption;
+        public static CustomOption DoubralKillerPlayerCount;
+        public static CustomOption DoubralKillerFirstSuicideTime;
+        public static CustomOption DoubralKillerSecondSuicideTime;
+        public static CustomOption DoubralKillerFirstKillTime;
+        public static CustomOption DoubralKillerSecondKillTime;
+        public static CustomOption DoubralKillerKillCoolDown;
+        public static CustomOption DoubralKillerIsMeetingReset;
+
         public static CustomOption QuarreledOption;
         public static CustomOption QuarreledTeamCount;
         public static CustomOption QuarreledOnlyCrewMate;
@@ -1068,6 +1077,14 @@ namespace SuperNewRoles.CustomOption
             JackalSeerIsImpostorLight = CustomOption.Create(464, false, CustomOptionType.Neutral, "MadMateImpostorLightSetting", false, JackalSeerOption);
             JackalSeerCreateSidekick = CustomOption.Create(465, false, CustomOptionType.Neutral, "JackalCreateSidekickSetting", false, JackalSeerOption);
             JackalSeerNewJackalCreateSidekick = CustomOption.Create(466, false, CustomOptionType.Neutral, "JackalNewJackalCreateSidekickSetting", false, JackalSeerCreateSidekick);
+
+            DoubralKillerOption = new CustomRoleOption(467, false, CustomOptionType.Impostor, "DoubralKillerName", RoleClass.DoubralKiller.color, 1);
+            DoubralKillerPlayerCount = CustomOption.Create(312, false, CustomOptionType.Impostor, "SettingPlayerCountName", ImpostorPlayers[0], ImpostorPlayers[1], ImpostorPlayers[2], ImpostorPlayers[3], DoubralKillerOption);
+            DoubralKillerFirstSuicideTime = CustomOption.Create(313, false, CustomOptionType.Impostor, "DoubralKillerSuicideRTimeSetting", 30f, 2.5f, 60f, 2.5f, DoubralKillerOption, format: "unitSeconds");
+            DoubralKillerSecondSuicideTime = CustomOption.Create(314 ,false, CustomOptionType.Impostor, "DoubralKillerSuicideLTimeSetting", 30f, 2.5f, 60f, 2.5f, DoubralKillerOption, format: "unitSeconds");
+            DoubralKillerFirstKillTime = CustomOption.Create(315, false, CustomOptionType.Impostor, "DoubralKillerKillLTimeSetting", 30f, 2.5f, 60f, 2.5f, DoubralKillerOption, format: "unitSeconds");
+            DoubralKillerSecondKillTime = CustomOption.Create(316, false, CustomOptionType.Impostor,"DoubralKillerSecondKillTimeSetting", 30f, 2.5f, 60f, 2.5f, DoubralKillerOption, format: "unitSeconds");
+            DoubralKillerIsMeetingReset = CustomOption.Create(317, false, CustomOptionType.Impostor,"DoubralKillerIsMeetingResetSetting", true, DoubralKillerOption);
 
             QuarreledOption = CustomOption.Create(122, true, CustomOptionType.Neutral, cs(RoleClass.Quarreled.color, "QuarreledName"), false, null, isHeader: true);
             QuarreledTeamCount = CustomOption.Create(124, true, CustomOptionType.Neutral, "QuarreledTeamCountSetting", QuarreledPlayers[0], QuarreledPlayers[1], QuarreledPlayers[2], QuarreledPlayers[3], QuarreledOption);
