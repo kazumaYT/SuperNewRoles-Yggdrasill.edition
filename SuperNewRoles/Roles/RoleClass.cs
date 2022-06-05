@@ -137,6 +137,9 @@ namespace SuperNewRoles.Roles
             Chief.ClearAndReload();
             Cleaner.ClearAndReload();
             MadCleaner.ClearAndReload();
+            MSizeBrother.ClearAndReload();
+            LSizeYoungerBrother.ClearAndReload();
+            Peach.ClearAndReload();
             //ロールクリア
             Quarreled.ClearAndReload();
             Lovers.ClearAndReload();
@@ -2045,6 +2048,39 @@ namespace SuperNewRoles.Roles
                 CoolTime = CustomOptions.MadCleanerCoolDown.getFloat();
                 IsUseVent = CustomOptions.MadCleanerIsUseVent.getBool();
                 IsImpostorLight = CustomOptions.MadCleanerIsImpostorLight.getBool();
+            }
+        }
+        public static class MSizeBrother
+        {
+            public static List<PlayerControl> MSizeBrotherPlayer;
+            public static Color32 color = new Color32 (255, 0, 0, byte.MaxValue);
+            public static float KillCoolTime;
+            public static void ClearAndReload()
+            {
+                MSizeBrotherPlayer = new List<PlayerControl>();
+                KillCoolTime = CustomOptions.MSizeBrotherKillCoolTime.getFloat();
+            }
+        }
+        public static class LSizeYoungerBrother
+        {
+            public static List<PlayerControl> LSizeYoungerBrotherPlayer;
+            public static Color32 color = new Color32 (0, 128, 0, byte.MaxValue);
+            public static float KillCoolTime;
+            public static void ClearAndReload()
+            {
+                LSizeYoungerBrotherPlayer = new List<PlayerControl>();
+                KillCoolTime = CustomOptions.LSizeYoungerBrotherKillCoolTime.getFloat();
+            }
+        }
+        public static class Peach
+        {
+            public static List<PlayerControl> PeachPlayer;
+            public static Color32 color = new Color32 (255, 101, 216, byte.MaxValue);
+            public static float KillCoolTime;
+            public static void ClearAndReload()
+            {
+                PeachPlayer = new List<PlayerControl>();
+                KillCoolTime = CustomOptions.PeachKillCoolTime.getFloat();
             }
         }
         //新ロールクラス

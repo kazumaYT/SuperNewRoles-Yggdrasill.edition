@@ -114,6 +114,9 @@ namespace SuperNewRoles.CustomRPC
         Chief,
         Cleaner,
         MadCleaner,
+        MSizeBrother,
+        LSizeYoungerBrother,
+        Peach,
         //RoleId
     }
 

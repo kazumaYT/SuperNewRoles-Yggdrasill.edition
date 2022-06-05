@@ -149,6 +149,8 @@ namespace SuperNewRoles.Patch
                             }
                             Fox.FixedUpdate.Postfix();
                             Minimalist.FixedUpdate.Postfix();
+                            LSizeYoungerBrother.FixedUpdate.Postfix();
+                            Peach.FixedUpdate.Postfix();
                         }
                         else
                         {

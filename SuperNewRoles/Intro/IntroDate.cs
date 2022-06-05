@@ -153,6 +153,9 @@ namespace SuperNewRoles.Intro
         public static IntroDate ChiefIntro = new IntroDate("Chief", RoleClass.Chief.color, 1, CustomRPC.RoleId.Chief);
         public static IntroDate CleanerIntro = new IntroDate("Cleaner", RoleClass.Cleaner.color, 1, CustomRPC.RoleId.Cleaner, TeamRoleType.Impostor);
         public static IntroDate MadCleanerIntro = new IntroDate("MadCleaner", RoleClass.MadCleaner.color, 1, CustomRPC.RoleId.MadCleaner);
+        public static IntroDate MSizeBrotherIntro = new IntroDate("MSizeBrother", RoleClass.MSizeBrother.color, 1, CustomRPC.RoleId.MSizeBrother, TeamRoleType.Impostor);
+        public static IntroDate LSizeYoungerBrotherIntro = new IntroDate("LSizeYoungerBrother", RoleClass.LSizeYoungerBrother.color, 1, CustomRPC.RoleId.LSizeYoungerBrother, TeamRoleType.Impostor);
+        public static IntroDate PeachIntro = new IntroDate("Peach", RoleClass.Peach.color, 1, CustomRPC.RoleId.Peach, TeamRoleType.Impostor);
         //イントロオブジェ
     }
 }

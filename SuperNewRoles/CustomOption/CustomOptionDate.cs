@@ -545,6 +545,17 @@ namespace SuperNewRoles.CustomOption
         public static CustomOption MadCleanerIsUseVent;
         public static CustomOption MadCleanerIsImpostorLight;
 
+        public static CustomOption SuperBrothersOption;
+        //public static CustomRoleOption MSizeBrotherOption;
+        public static CustomOption MSizeBrotherPlayerCount;
+        public static CustomOption MSizeBrotherKillCoolTime;
+        //public static CustomRoleOption LSizeYoungerBrotherOption;
+        public static CustomOption LSizeYoungerBrotherPlayerCount;
+        public static CustomOption LSizeYoungerBrotherKillCoolTime;
+        //public static CustomRoleOption PeachOption;
+        public static CustomOption PeachPlayerCount;
+        public static CustomOption PeachKillCoolTime;
+
         public static CustomOption QuarreledOption;
         public static CustomOption QuarreledTeamCount;
         public static CustomOption QuarreledOnlyCrewMate;
@@ -1116,6 +1127,17 @@ namespace SuperNewRoles.CustomOption
             MadCleanerCoolDown = CustomOption.Create(91, false, CustomOptionType.Crewmate, "CleanerCoolDownSetting", 30f, 2.5f, 60f, 2.5f, MadCleanerOption, format: "unitSeconds");
             MadCleanerIsUseVent = CustomOption.Create(413, false, CustomOptionType.Crewmate, "MadMateUseVentSetting", false, MadCleanerOption);
             MadCleanerIsImpostorLight = CustomOption.Create(414, false, CustomOptionType.Crewmate, "MadMateImpostorLightSetting", false, MadCleanerOption);
+
+            SuperBrothersOption = CustomOption.Create(221, true, CustomOptionType.Impostor, cs(RoleClass.MSizeBrother.color, "SuperBrothersName"), false, null, isHeader: true);
+            //MSizeBrotherOption = new CustomRoleOption(293, true, CustomOptionType.Impostor, "MSizeBrotherName", RoleClass.MSizeBrother.color, 1);
+            MSizeBrotherPlayerCount = CustomOption.Create(383, true, CustomOptionType.Impostor, "MSizeSettingPlayerCountName", AlonePlayers[0], AlonePlayers[1], AlonePlayers[2], AlonePlayers[3], SuperBrothersOption);
+            MSizeBrotherKillCoolTime = CustomOption.Create(91, true, CustomOptionType.Impostor, "MSizeKillCoolTimeSetting", 30f, 2.5f, 60f, 2.5f, SuperBrothersOption, format: "unitSeconds");
+            //LSizeYoungerBrotherOption = new CustomRoleOption(293, true, CustomOptionType.Impostor, "LSizeYoungerBrotherName", RoleClass.LSizeYoungerBrother.color, 1);
+            LSizeYoungerBrotherPlayerCount = CustomOption.Create(383, true, CustomOptionType.Impostor, "LSizeSettingPlayerCountName", AlonePlayers[0], AlonePlayers[1], AlonePlayers[2], AlonePlayers[3], SuperBrothersOption);
+            LSizeYoungerBrotherKillCoolTime = CustomOption.Create(91, true, CustomOptionType.Impostor, "LSizeKillCoolTimeSetting", 30f, 2.5f, 60f, 2.5f, SuperBrothersOption, format: "unitSeconds");
+            //PeachOption = new CustomRoleOption(293, true, CustomOptionType.Impostor, "PeachName", RoleClass.Peach.color, 1);
+            PeachPlayerCount = CustomOption.Create(383, true, CustomOptionType.Impostor, "PeachSettingPlayerCountName", AlonePlayers[0], AlonePlayers[1], AlonePlayers[2], AlonePlayers[3], SuperBrothersOption);
+            PeachKillCoolTime = CustomOption.Create(91, true, CustomOptionType.Impostor, "PeachKillCoolTimeSetting", 30f, 2.5f, 60f, 2.5f, SuperBrothersOption, format: "unitSeconds");
 
             QuarreledOption = CustomOption.Create(122, true, CustomOptionType.Neutral, cs(RoleClass.Quarreled.color, "QuarreledName"), false, null, isHeader: true);
             QuarreledTeamCount = CustomOption.Create(124, true, CustomOptionType.Neutral, "QuarreledTeamCountSetting", QuarreledPlayers[0], QuarreledPlayers[1], QuarreledPlayers[2], QuarreledPlayers[3], QuarreledOption);

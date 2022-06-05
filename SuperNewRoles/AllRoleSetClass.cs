@@ -868,6 +868,12 @@ namespace SuperNewRoles
                     return CustomOption.CustomOptions.CleanerPlayerCount.getFloat();
                 case (RoleId.MadCleaner):
                     return CustomOption.CustomOptions.MadCleanerPlayerCount.getFloat();
+                    case (RoleId.MSizeBrother):
+                    return CustomOption.CustomOptions.MSizeBrotherPlayerCount.getFloat();
+                    case (RoleId.LSizeYoungerBrother):
+                    return CustomOption.CustomOptions.LSizeYoungerBrotherPlayerCount.getFloat();
+                    case (RoleId.Peach):
+                    return CustomOption.CustomOptions.PeachPlayerCount.getFloat();
                     //プレイヤーカウント
             }
             return 1;

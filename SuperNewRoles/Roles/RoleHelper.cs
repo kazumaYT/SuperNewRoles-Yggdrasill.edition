@@ -539,6 +539,15 @@ namespace SuperNewRoles
                 case (CustomRPC.RoleId.MadCleaner):
                     Roles.RoleClass.MadCleaner.MadCleanerPlayer.Add(player);
                     break;
+                case (CustomRPC.RoleId.MSizeBrother):
+                    Roles.RoleClass.MSizeBrother.MSizeBrotherPlayer.Add(player);
+                    break;
+                case (CustomRPC.RoleId.LSizeYoungerBrother):
+                    Roles.RoleClass.LSizeYoungerBrother.LSizeYoungerBrotherPlayer.Add(player);
+                    break;
+                case (CustomRPC.RoleId.Peach):
+                    Roles.RoleClass.Peach.PeachPlayer.Add(player);
+                    break;
                 //ロールアド
                 default:
                     SuperNewRolesPlugin.Logger.LogError("setRole: no method found for role type {role}");
@@ -821,13 +830,22 @@ namespace SuperNewRoles
                 case (CustomRPC.RoleId.Chief):
                     Roles.RoleClass.Chief.ChiefPlayer.RemoveAll(ClearRemove);
                     break;
-                    case (CustomRPC.RoleId.Cleaner):
+                case (CustomRPC.RoleId.Cleaner):
                     Roles.RoleClass.Cleaner.CleanerPlayer.RemoveAll(ClearRemove);
                     break;
                 case (CustomRPC.RoleId.MadCleaner):
                     Roles.RoleClass.MadCleaner.MadCleanerPlayer.RemoveAll(ClearRemove);
                     break;
-                //ロールリモベ
+                case (CustomRPC.RoleId.MSizeBrother):
+                    Roles.RoleClass.MSizeBrother.MSizeBrotherPlayer.RemoveAll(ClearRemove);
+                    break;
+                case (CustomRPC.RoleId.LSizeYoungerBrother):
+                    Roles.RoleClass.LSizeYoungerBrother.LSizeYoungerBrotherPlayer.RemoveAll(ClearRemove);
+                    break;
+                case (CustomRPC.RoleId.Peach):
+                    Roles.RoleClass.Peach.PeachPlayer.RemoveAll(ClearRemove);
+                    break;
+                    //ロールリモベ
 
             }
             ChacheManager.ResetMyRoleChache();
@@ -1209,6 +1227,15 @@ namespace SuperNewRoles
                         break;
                     case RoleId.Cleaner:
                         addition = RoleClass.Cleaner.KillCoolTime;
+                        break;
+                    case RoleId.MSizeBrother:
+                        addition = RoleClass.MSizeBrother.KillCoolTime;
+                        break;
+                    case RoleId.LSizeYoungerBrother:
+                        addition = RoleClass.LSizeYoungerBrother.KillCoolTime;
+                        break;
+                    case RoleId.Peach:
+                        addition = RoleClass.Peach.KillCoolTime;
                         break;
                 }
             }
@@ -1618,14 +1645,26 @@ namespace SuperNewRoles
                     return CustomRPC.RoleId.Chief;
                 }
                 else if (Roles.RoleClass.Cleaner.CleanerPlayer.IsCheckListPlayerControl(player))
-            {
-                return CustomRPC.RoleId.Cleaner;
-            }
-            else if (Roles.RoleClass.MadCleaner.MadCleanerPlayer.IsCheckListPlayerControl(player))
-            {
-                return CustomRPC.RoleId.MadCleaner;
-            }
-            //ロールチェック
+                {
+                    return CustomRPC.RoleId.Cleaner;
+                }
+                else if (Roles.RoleClass.MadCleaner.MadCleanerPlayer.IsCheckListPlayerControl(player))
+                {
+                    return CustomRPC.RoleId.MadCleaner;
+                }
+                else if (Roles.RoleClass.MSizeBrother.MSizeBrotherPlayer.IsCheckListPlayerControl(player))
+                {
+                    return CustomRPC.RoleId.MSizeBrother;
+                }
+                else if (Roles.RoleClass.LSizeYoungerBrother.LSizeYoungerBrotherPlayer.IsCheckListPlayerControl(player))
+                {
+                    return CustomRPC.RoleId.LSizeYoungerBrother;
+                }
+                else if (Roles.RoleClass.Peach.PeachPlayer.IsCheckListPlayerControl(player))
+                {
+                    return CustomRPC.RoleId.Peach;
+                }
+                //ロールチェック
             }
             catch (Exception e)
             {
